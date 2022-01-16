@@ -187,10 +187,11 @@ class _MyHomePageState extends State<MyHomePage> {
                             );
                           }else{
                             var weight = weght.Calculate(length/100, girth/100);
-                            var ngtWeight = weight-3;
-                            var pstWeight = weight+3;
-                            var ngtPrice = (ngtWeight*112.50).round();
-                            var pstPrice = (pstWeight*112.50).round();
+                            var price = weight * 112.50;
+                            var ngtWeight = (weight - (0.03 * weight)).round();
+                            var pstWeight = ((0.03 * weight) + weight).round();
+                            var ngtPrice = (price - (0.03 * price)).round();
+                            var pstPrice = (price + (0.03 * price)).round();
 
                             showDialog(
                               context: context,
